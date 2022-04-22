@@ -1,0 +1,68 @@
+@import "../config/variables.scss";
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 30px 100px 30px;
+  font-size: 16px;
+  height: 50vh;
+
+  div:not(.name) {
+    padding: 10px;
+  }
+
+  .name {
+    background-color: $endas;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 1em 2em;
+    &:hover {
+      cursor: pointer;
+      animation: appearWithShadow 0.2s ease-in-out forwards;
+    }
+  }
+
+  .filename {
+    width: 200px;
+    font-size: 14px;
+    color: rgba(#000, 0.8);
+    word-break: break-all;
+    i {
+      margin-right: 5px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .notice {
+    width: 250px;
+    height: 15vh;
+
+    overflow-y: auto;
+    margin: 25px 0;
+  }
+
+  button {
+    border: none;
+    background-color: rgba(#000, 0.5);
+    color: whitesmoke;
+    font-size: 14px;
+    box-shadow: inset -1px -1px 2px rgba(#000, 0.7);
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+}
+
+@keyframes appearWithShadow {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 5px 10px rgba($endas, 0.5);
+  }
+}

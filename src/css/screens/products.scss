@@ -1,0 +1,43 @@
+@import "../config/variables.scss";
+
+.products {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  font-size: 17px;
+
+  h3 {
+    width: 80%;
+  }
+
+  .notice__edit {
+    min-width: 100px;
+    font-size: 14px;
+    border: 1px solid rgba(#000, 0.2);
+    background-color: white;
+    color: rgba(#000, 0.5);
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .excel-down {
+    width: 30px;
+    margin-left: 10px;
+    img {
+      display: block;
+      width: 100%;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

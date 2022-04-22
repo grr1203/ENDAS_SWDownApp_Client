@@ -1,0 +1,47 @@
+@import "../config/variables.scss";
+
+.nav {
+  display: flex;
+  padding: 20px;
+  width: 80vw;
+
+  .nav__logo {
+    margin: 5px 40px 0 0;
+    width: 180px;
+    object-fit: cover;
+  }
+
+  .menu {
+    width: 80vw;
+    height: 7vh;
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+
+    .menu__item {
+      position: relative;
+
+      a {
+        display: block;
+        font-size: 16px;
+        padding: 20px 40px;
+        text-decoration-line: none;
+        color: black;
+      }
+
+      &:hover {
+        border-bottom: 4px solid $navBottom;
+        animation: slowAppearance 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes slowAppearance {
+  from {
+    border-color: rgba(73, 172, 79, 0);
+  }
+  to {
+    border-color: $navBottom;
+  }
+}

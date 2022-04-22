@@ -1,0 +1,36 @@
+.footer {
+  width: 100vw;
+  padding: 2em 0 1em 0;
+  background-color: #0e2c20;
+  color: #61807a;
+}
+
+.footer__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 5%;
+  border-bottom: 2px solid #61807a;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.footer__col h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.footer__col h6 {
+  color: whitesmoke;
+  margin-bottom: 1rem;
+}
+
+.footer__col span {
+  margin-bottom: 0.5rem;
+}
