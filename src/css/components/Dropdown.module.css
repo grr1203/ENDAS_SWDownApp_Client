@@ -1,17 +1,20 @@
 .dropdown {
   position: absolute;
   left: 0;
-  top: 7vh;
+  top: 8vh;
   width: 12vw;
   list-style: none;
   box-shadow: 0 5px 20px -1px rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   display: none;
+  z-index: 2;
 }
 
 .dropdown a {
   display: block;
-  padding: 20px 30px;
+  padding: 25px 40px;
+  font-size: 16px;
+  font-weight: 600;
   text-decoration-line: none;
   background-color: white;
   color: black;

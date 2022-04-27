@@ -4,6 +4,14 @@ import Dropdown from "./Dropdown";
 import style from "../css/components/Navigator.module.scss";
 
 function Navigator() {
+  const [login, setlogin] = useState(localStorage.getItem("login"));
+
+  const logout = () => {
+    localStorage.removeItem("login");
+    setlogin(false);
+    window.location.reload();
+  };
+
   return (
     <div className={style.nav}>
       <Link to="/">
@@ -18,10 +26,15 @@ function Navigator() {
           <MenuItem item={item} key={index} />
         ))}
       </ul>
-      {/* temp */}
-      <Link to="/login" style={{ textDecoration: "none" }}>
-        　
-      </Link>
+      {login ? (
+        <div className={style.login} onClick={logout}>
+          Logout
+        </div>
+      ) : (
+        <Link to="/login" className={style.login}>
+          Login
+        </Link>
+      )}
     </div>
   );
 }
@@ -33,6 +46,7 @@ const menuItems = [
       { title: "CL", route: "/products/CL" },
       { title: "CEL", route: "/products/CEL" },
       { title: "ARCA", route: "/products/ARCA" },
+      { title: "Streaming Server", route: "/products/StreamingServer" },
     ],
   },
   {
@@ -56,11 +70,15 @@ function MenuItem({ item }) {
     >
       {item.submenus ? (
         <>
-          <Link to="#">{item.title}</Link>
+          <Link className={style.menu__item__title} to="#">
+            {item.title}
+          </Link>
           <Dropdown items={item.submenus} show={dropdown} />
         </>
       ) : (
-        <Link to={item.route}>{item.title}</Link>
+        <Link className={style.menu__item__title} to={item.route}>
+          {item.title}
+        </Link>
       )}
     </li>
   );

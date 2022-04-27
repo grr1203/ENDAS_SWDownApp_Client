@@ -6,14 +6,14 @@
   width: 80vw;
 
   .nav__logo {
-    margin: 5px 40px 0 0;
+    margin: 10px 40px 0 0;
     width: 180px;
     object-fit: cover;
   }
 
   .menu {
     width: 80vw;
-    height: 7vh;
+    height: 8vh;
     display: flex;
     justify-content: flex-start;
     list-style: none;
@@ -21,10 +21,11 @@
     .menu__item {
       position: relative;
 
-      a {
+      .menu__item__title {
         display: block;
-        font-size: 16px;
-        padding: 20px 40px;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 25px 50px;
         text-decoration-line: none;
         color: black;
       }
@@ -33,6 +34,21 @@
         border-bottom: 4px solid $navBottom;
         animation: slowAppearance 0.3s ease-in-out;
       }
+    }
+  }
+
+  .login {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 28px 0;
+    height: 7vh;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

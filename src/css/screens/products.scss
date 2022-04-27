@@ -5,25 +5,27 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
+  margin: 50px;
 }
 
 .notice {
   display: flex;
   align-items: center;
   width: 90%;
-  font-size: 17px;
+  padding-right: 30px;
+  font-size: 18px;
+  color: rgba(#000, 0.8);
 
   h3 {
-    width: 80%;
+    width: 90%;
   }
 
   .notice__edit {
-    min-width: 100px;
-    font-size: 14px;
+    min-width: 120px;
+    font-size: 16px;
     border: 1px solid rgba(#000, 0.2);
     background-color: white;
-    color: rgba(#000, 0.5);
+    color: rgba(#000, 0.6);
     border-radius: 5px;
     padding: 5px;
     text-align: center;
