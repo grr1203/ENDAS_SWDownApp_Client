@@ -17,7 +17,7 @@ function Product({ product, type, index }) {
   const downloadSW = async () => {
     const res = await axios({
       method: "post",
-      url: "http://localhost:4000/api/sw/download",
+      url: process.env.REACT_APP_SERVER_URL + "/api/sw/download",
       data: {
         swName: product.name,
       },

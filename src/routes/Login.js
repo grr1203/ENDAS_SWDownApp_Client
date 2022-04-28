@@ -31,7 +31,7 @@ function LoginForm() {
 
     const res = await axios({
       method: "post",
-      url: "http://localhost:4000/api/login",
+      url: process.env.REACT_APP_SERVER_URL + "/api/login",
       data: {
         id,
         password,
@@ -40,6 +40,7 @@ function LoginForm() {
     if (res.status !== 200) return;
 
     localStorage.setItem("login", true);
+    window.location.reload();
     navigate("/");
   };
 

@@ -25,7 +25,7 @@ function Products() {
     async function axiosNotice() {
       const res = await axios({
         method: "get",
-        url: `http://localhost:4000/api/notice`,
+        url: process.env.REACT_APP_SERVER_URL + `/api/notice`,
       });
       setNotice(res.data.notice);
     }
@@ -36,7 +36,7 @@ function Products() {
     async function axiosSWList() {
       const res = await axios({
         method: "get",
-        url: `http://localhost:4000/api/sw/list/${type}`,
+        url: process.env.REACT_APP_SERVER_URL + `/api/sw/list/${type}`,
       });
       setProductList(res.data);
     }

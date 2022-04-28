@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
+import axios from "axios";
 import style from "../css/components/Navigator.module.scss";
 
 function Navigator() {
   const [login, setlogin] = useState(localStorage.getItem("login"));
 
-  const logout = () => {
+  const logout = async () => {
+    const res = await axios({
+      method: "post",
+      url: process.env.REACT_APP_SERVER_URL + "/api/logout",
+    });
+    if (res.status !== 200) return;
+
     localStorage.removeItem("login");
     setlogin(false);
     window.location.reload();

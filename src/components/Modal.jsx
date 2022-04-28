@@ -27,7 +27,7 @@ export function NoticeEditModal({ open, notice, handleClose, setNotice }) {
   const handleClickSave = async () => {
     const res = await axios({
       method: "post",
-      url: "http://localhost:4000/api/notice",
+      url: process.env.REACT_APP_SERVER_URL + "/api/notice",
       data: {
         notice: tempNotice,
       },
@@ -105,7 +105,7 @@ export function AddSWModal({
 
     const res = await axios({
       method: "post",
-      url: "http://localhost:4000/api/sw/upload",
+      url: process.env.REACT_APP_SERVER_URL + "/api/sw/upload",
       data: formData,
       headers: {
         "content-type": "multipart/form-data",
