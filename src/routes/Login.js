@@ -40,7 +40,6 @@ function LoginForm() {
     if (res.status !== 200) return;
 
     localStorage.setItem("login", true);
-    window.location.reload();
     navigate("/");
   };
 
