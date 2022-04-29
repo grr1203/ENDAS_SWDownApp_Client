@@ -70,11 +70,38 @@
   }
 }
 
+.loading {
+  z-index: 20;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -45px;
+  margin-top: -45px;
+
+  border: 12px solid rgba(#000, 0.1);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 50%;
+
+  animation: rotate 1s infinite linear;
+}
+
 @keyframes appearWithShadow {
   from {
     box-shadow: none;
   }
   to {
     box-shadow: 0 5px 10px 3px rgba($endas, 0.5);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

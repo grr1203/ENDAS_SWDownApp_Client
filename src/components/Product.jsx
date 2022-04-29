@@ -5,6 +5,7 @@ import axios from "axios";
 
 function Product({ product, type, index }) {
   const [modal, setModal] = useState(false);
+  const [loading, setloading] = useState(false);
   const [login] = useState(localStorage.getItem("login"));
 
   const openModal = () => {
@@ -15,6 +16,7 @@ function Product({ product, type, index }) {
   };
 
   const downloadSW = async () => {
+    setloading(true);
     const res = await axios({
       method: "post",
       url: process.env.REACT_APP_SERVER_URL + "/api/sw/download",
@@ -30,6 +32,7 @@ function Product({ product, type, index }) {
     );
     const swUrl = URL.createObjectURL(new Blob([res.data]));
     downloadFile(swUrl, fileName);
+    setloading(false);
   };
 
   //front change
@@ -61,6 +64,7 @@ function Product({ product, type, index }) {
         index={index}
         setProduct={setProduct}
       />
+      <div className={loading ? style.loading : ""}></div>
     </div>
   );
 }
