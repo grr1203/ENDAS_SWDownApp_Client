@@ -25,7 +25,9 @@ function Product({ product, type, index }) {
     });
     if (res.status !== 200) return;
 
-    const fileName = res.headers["content-disposition"].slice(22, -1);
+    const fileName = decodeURIComponent(
+      res.headers["content-disposition"].split('"')[1]
+    );
     const swUrl = URL.createObjectURL(new Blob([res.data]));
     downloadFile(swUrl, fileName);
   };

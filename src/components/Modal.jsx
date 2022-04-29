@@ -2,12 +2,13 @@ import axios from "axios";
 import { useEffect, useState, useRef } from "react";
 import style from "../css/components/Modal.module.scss";
 
-function Modal({ open, header, children }) {
+function Modal({ open, header, children, loading }) {
   return (
-    <div className={`${style.modal} ${open ? style.visible : ""}`}>
+    <div className={`${style.modal} ${open ? style.visible : ""} `}>
       <section>
         <header>{header}</header>
         {children}
+        <div className={loading ? style.loading : ""}></div>
       </section>
     </div>
   );
@@ -62,6 +63,7 @@ export function AddSWModal({
   const [model, setModel] = useState(product.model);
   const [file, setFile] = useState();
   const [notice, setNotice] = useState(product.notice);
+  const [loading, setLoading] = useState(false);
   const fileInput = useRef();
 
   //열 때마다 데이터 새로 불러오기
@@ -96,6 +98,8 @@ export function AddSWModal({
       return;
     }
 
+    setLoading(true);
+
     const formData = new FormData();
     formData.append("name", product.name);
     formData.append("type", type);
@@ -115,11 +119,12 @@ export function AddSWModal({
 
     const fileName = fileInput.current.value.split("\\")[2];
     setProduct(model, fileName, notice); //상위 Component 랜더링
+    setLoading(false);
     handleClose();
   };
 
   return (
-    <Modal open={open} header="펌웨어 업로드">
+    <Modal open={open} header="펌웨어 업로드" loading={loading}>
       <main>
         <form id={`modal-form${index}`} onSubmit={handleSubmit}>
           <input

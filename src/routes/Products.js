@@ -81,27 +81,3 @@ function Products() {
 }
 
 export default Products;
-
-const testproductlist = [
-  {
-    name: "CL",
-    type: "CL",
-    model: "EVR-SA0000",
-    fileName: "",
-    notice: "민수",
-  },
-  {
-    name: "CL-WS",
-    type: "CL",
-    model: "HMR-SA000XL",
-    fileName: "",
-    notice: "조달",
-  },
-  {
-    name: "CEL",
-    type: "CEL",
-    model: "HMR-SA204 CEL",
-    fileName: "",
-    notice: "",
-  },
-];
